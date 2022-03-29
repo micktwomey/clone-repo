@@ -1,10 +1,11 @@
-name: on_push_main
+name: on_push
 
 on:
   workflow_dispatch:
   push:
     branches:
       - "main"
+  pull_request:
 
 permissions:
   contents: read
