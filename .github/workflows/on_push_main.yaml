@@ -52,4 +52,7 @@ jobs:
       - name: mypy
         run: mypy .
       - name: pytest
-        run: pytest -vv --tb=short
+        run: |
+          git config --global user.email "github-actions@example.com"
+          git config --global user.name "github-actions"
+          pytest -vv --tb=short

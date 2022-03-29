@@ -30,7 +30,10 @@ jobs:
       - name: black
         run: black --check .
       - name: pytest
-        run: pytest .
+        run: |
+          git config --global user.email "github-actions@example.com"
+          git config --global user.name "github-actions"
+          pytest .
       - name: set package version from tag
         run: poetry version ${{ github.ref_name }}
       - name: build package

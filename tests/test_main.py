@@ -67,8 +67,6 @@ def test_clone(capfd: pytest.CaptureFixture[str], prefix: str) -> None:
     with (source_path / "hello.txt").open("wt") as fp:
         fp.write("Hello there")
     subprocess.check_call(["git", "init"], cwd=source_path)
-    subprocess.check_call(["git", "config", "user.email", "pytest@example.com"])
-    subprocess.check_call(["git", "config", "user.name", "pytest"])
     subprocess.check_call(["git", "add", "hello.txt"], cwd=source_path)
     subprocess.check_call(["git", "commit", "-m", "Write a greeting"], cwd=source_path)
     print(capfd.readouterr())  # flush the buffer
