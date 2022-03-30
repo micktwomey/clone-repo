@@ -66,6 +66,18 @@ optional = false
 python-versions = ">=3.6.1"
 
 [[package]]
+name = "changelog-manager"
+version = "1.3.0"
+description = "Easily manage your changelog using this CLI"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+click = "*"
+keepachangelog = "2.0.0.dev2"
+
+[[package]]
 name = "click"
 version = "8.0.4"
 description = "Composable command line interface toolkit"
@@ -179,6 +191,17 @@ pipfile_deprecated_finder = ["pipreqs", "requirementslib"]
 requirements_deprecated_finder = ["pipreqs", "pip-api"]
 colors = ["colorama (>=0.4.3,<0.5.0)"]
 plugins = ["setuptools"]
+
+[[package]]
+name = "keepachangelog"
+version = "2.0.0.dev2"
+description = "Manipulate keep a changelog files."
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[package.extras]
+testing = ["requests (>=2.0.0,<3.0.0)", "starlette (>=0.16.0,<0.17.0)", "flask-restx (>=0.5.0,<0.6.0)", "pytest-cov (>=2.0.0,<3.0.0)"]
 
 [[package]]
 name = "mypy"
@@ -478,7 +501,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.7,<4.0"
-content-hash = "6c5d3e9526a2e72b613a1aa8b698eb3e056ff20d7b9e5f13c890cd9de5ae647b"
+content-hash = "11df8a32806ff68cad98388346195bb3961debbcb7678adac7358d393fdde70e"
 
 [metadata.files]
 argcomplete = [
@@ -522,6 +545,10 @@ cfgv = [
     {file = "cfgv-3.3.1-py2.py3-none-any.whl", hash = "sha256:c6a0883f3917a037485059700b9e75da2464e6c27051014ad85ba6aaa5884426"},
     {file = "cfgv-3.3.1.tar.gz", hash = "sha256:f5a830efb9ce7a445376bb66ec94c638a9787422f96264c98edc6bdeed8ab736"},
 ]
+changelog-manager = [
+    {file = "changelog_manager-1.3.0-py3-none-any.whl", hash = "sha256:d45e53bff0357c474f510a7c3eb032ae67079083479fcbb14fc39f4a2a36460c"},
+    {file = "changelog_manager-1.3.0.tar.gz", hash = "sha256:92a3a94b150e93026782c224572fd3c3d393bc6f5d97d02a7c00092398a6e079"},
+]
 click = [
     {file = "click-8.0.4-py3-none-any.whl", hash = "sha256:6a7a62563bbfabfda3a38f3023a1db4a35978c0abd76f6c9605ecd6554d6d9b1"},
     {file = "click-8.0.4.tar.gz", hash = "sha256:8458d7b1287c5fb128c90e23381cf99dcde74beaf6c7ff6384ce84d6fe090adb"},
@@ -561,6 +588,10 @@ iniconfig = [
 isort = [
     {file = "isort-5.10.1-py3-none-any.whl", hash = "sha256:6f62d78e2f89b4500b080fe3a81690850cd254227f27f75c3a0c491a1f351ba7"},
     {file = "isort-5.10.1.tar.gz", hash = "sha256:e8443a5e7a020e9d7f97f1d7d9cd17c88bcb3bc7e218bf9cf5095fe550be2951"},
+]
+keepachangelog = [
+    {file = "keepachangelog-2.0.0.dev2-py3-none-any.whl", hash = "sha256:fab31d5746cfefcf30d9ab7ed97be9f1d4dcad4cba0b8e6545b7663de5dad500"},
+    {file = "keepachangelog-2.0.0.dev2.tar.gz", hash = "sha256:72f12f5f0f1b34b969d6a478739c12c53023d090e0b748ae39f0df1c8b4481c2"},
 ]
 mypy = [
     {file = "mypy-0.941-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:98f61aad0bb54f797b17da5b82f419e6ce214de0aa7e92211ebee9e40eb04276"},
