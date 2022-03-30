@@ -4,6 +4,10 @@ version = "0.1.0"
 description = "CLI tool to clone repos easily"
 authors = ["Michael Twomey <mick@twomeylee.name>"]
 license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/micktwomey/clone-repo"
+repository = "https://github.com/micktwomey/clone-repo"
+include = ["CHANGELOG.md", "justfile", "noxfile.py"]
 
 [tool.poetry.dependencies]
 python = ">=3.7,<4.0"

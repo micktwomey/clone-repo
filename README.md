@@ -1,5 +1,8 @@
 # clone-repo: Easily clone repos
 
+- [Home](https://github.com/micktwomey/clone-repo)
+- [PyPI](https://pypi.org/project/clone-repo/)
+
 ## What is this?
 
 For years I've been using a noddy script which clones many types of repos into a fixed location which is generated based on the repo itself. Similar to how go packages are cloned into go/src I typically clone my stuff into ~/src.
