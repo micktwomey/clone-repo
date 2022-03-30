@@ -46,6 +46,7 @@ do-release:
     git commit -m"Release ${VERSION}"
     git tag $VERSION
     git push origin $VERSION
+    git push origin main
     gh release create $VERSION --title $VERSION -F build/release-notes.md ./dist/*
     poetry publish
     rm -rvf ./dist
