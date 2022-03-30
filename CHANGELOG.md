@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Starting a changelog using [changelog-manager](https://github.com/axelfauvel/changelog-manager)
-- Added just justfile for building
-- Added ASDF .tool-versions
+- Added [just](https://github.com/casey/just) justfile for building
+- Added [asdf](https://asdf-vm.com) .tool-versions
 
 ## [0.0.0] - 2022-03-24
 ### Added
