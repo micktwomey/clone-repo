@@ -16,6 +16,10 @@ bootstrap-dev-env:
     poetry install
     poetry run pre-commit install
 
+# Find out what your next released version might be based on the changelog.
+next-version:
+    changelog-manager suggest
+
 # Build and create files for a release
 prepare-release:
     #!/bin/bash
