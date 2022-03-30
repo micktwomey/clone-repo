@@ -14,7 +14,7 @@ changelog-add TYPE ENTRY:
 bootstrap-dev-env:
     asdf install
     poetry install
-    pre-commit install
+    poetry run pre-commit install
 
 # Build and create files for a release
 prepare-release:
@@ -25,7 +25,7 @@ prepare-release:
     rm -rvf dist
     poetry build
 
-# Tag and release files
+# Tag and release files, make sure you run 'just prepare-release' first.
 do-release:
     #!/bin/bash
     set -xeuo pipefail
