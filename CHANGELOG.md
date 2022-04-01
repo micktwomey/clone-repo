@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Added get_destination_path_for_repo function
+- Added .editorconfig
 
 ## [0.1.3] - 2022-03-31
 ### Fixed
