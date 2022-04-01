@@ -6,6 +6,12 @@ import structlog
 from .parse_repo_url import RepoURL
 
 
+def get_destination_path_for_repo(
+    repo_url: RepoURL, prefix_path: pathlib.Path
+) -> pathlib.Path:
+    return prefix_path / repo_url.host / repo_url.group / repo_url.project
+
+
 def clone(
     repo_url: RepoURL,
     no_act: bool,
@@ -13,7 +19,7 @@ def clone(
     prefix_path: pathlib.Path,
 ) -> None:
     log = structlog.get_logger()
-    destination_path = prefix_path / repo_url.host / repo_url.group / repo_url.project
+    destination_path = get_destination_path_for_repo(repo_url, prefix_path)
     if destination_path.exists() and fetch and repo_url.tool == "git":
         cmd = ["git", "fetch", "--all", "--prune", "--recurse-submodules"]
         log.info("run", cmd=cmd, cwd=destination_path)
