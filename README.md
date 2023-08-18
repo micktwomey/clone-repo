@@ -25,6 +25,8 @@ Supports:
   - `git clone` to `~/src/{host}/{org}/{repo}`
 - `https://github.com/org/repo.git`
   - `git clone` to `~/src/github.com/{org}/{repo}`
+- `https://github.com/org/repo`
+  - `git clone` to `~/src/github.com/{org}/{repo}`
 - `https://gitlab.example.com/org/repo.git`
   - `git clone` to `~/src/{host}/{org}/{repo}`
 - `https://hg.mozilla.org/mozilla-central/`

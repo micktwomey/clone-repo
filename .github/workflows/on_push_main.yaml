@@ -13,47 +13,42 @@ permissions:
 jobs:
   lint:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup python
-        uses: actions/setup-python@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
         with:
-          python-version: "3.10"
+          python-version: "3.11"
       - name: Install poetry
         run: |
           curl -sSL https://install.python-poetry.org | python3 -
-          poetry config virtualenvs.create false
-      - name: Install dependencies
-        run: poetry install
-      - name: isort
-        run: isort --check .
-      - name: black
-        run: black --check .
-      - name: build package
-        run: poetry build
+          poetry install
+      - name: Install just
+        uses: extractions/setup-just@v1
+      - name: just test
+        run: just lint
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.7", "3.8", "3.9", "3.10"]
+        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11", "3.12-dev"]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup python
-        uses: actions/setup-python@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
+          architecture: x64
+          allow-prereleases: true
       - name: Install poetry
         run: |
           curl -sSL https://install.python-poetry.org | python3 -
-          poetry config virtualenvs.create false
-      - name: Install dependencies
-        run: poetry install
-      - name: mypy
-        run: mypy .
-      - name: pytest
+          poetry install
+      - name: Install just
+        uses: extractions/setup-just@v1
+      - name: just test
         run: |
           git config --global user.email "github-actions@example.com"
           git config --global user.name "github-actions"
-          pytest -vv --tb=short
+          just test

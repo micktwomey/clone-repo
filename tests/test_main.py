@@ -11,7 +11,8 @@ import pytest
 @pytest.fixture
 def prefix() -> typing.Iterator[str]:
     with tempfile.TemporaryDirectory() as tempdir:
-        # Replicate the resolve calls to ensure our check matches the path used in clone-repo
+        # Replicate the resolve calls to ensure our check matches the path used in
+        # clone-repo.
         temp_path = pathlib.Path(tempdir).expanduser().resolve()
         yield str(temp_path)
 

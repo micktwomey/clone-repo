@@ -134,6 +134,16 @@ EXAMPLES = (
             "repo",
         ),
     ),
+    (
+        "https://github.com/micktwomey/sync-camera-disk",
+        RepoURL(
+            "git@github.com:micktwomey/sync-camera-disk.git",
+            "git",
+            "github.com",
+            "micktwomey",
+            "sync-camera-disk",
+        ),
+    ),
 )
 
 
