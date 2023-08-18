@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Add Devenv development configuration
+- Freshen up development tools, add ruff, remove nox
 
 ## [0.2.0] - 2022-04-01
 ### Added
