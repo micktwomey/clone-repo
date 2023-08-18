@@ -54,4 +54,11 @@ def parse_url(url: str) -> typing.Optional[RepoURL]:
     project = re.split(r"\.git$", matched["project"])[0]
     if project.endswith("/"):
         project = project[:-1]
+    if (
+        host == "github.com"
+        and tool == "git"
+        and url.startswith("https")
+        and not url.endswith(".git")
+    ):
+        url = f"git@github.com:{group}/{project}.git"
     return RepoURL(url, tool, host, group, project)

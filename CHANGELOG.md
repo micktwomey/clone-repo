@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Add Devenv development configuration
 - Freshen up development tools, add ruff, remove nox
+- Add support for GitHub URLs (without .git portions). e.g. https://github.com/micktwomey/clone_repo
 
 ## [0.2.0] - 2022-04-01
 ### Added
