@@ -12,7 +12,7 @@
 
   languages.python = {
     enable = true;
-    package = pkgs.python311;
+    package = pkgs.python314;
     poetry.enable = true;
     poetry.package = pkgs.poetry;
     venv.enable = true;
