@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "clone-repo"
-version = "0.3.0"
+version = "1.0.0"
 description = "CLI tool to clone repos easily"
 authors = ["Michael Twomey <mick@twomeylee.name>"]
 license = "MIT"
