@@ -20,7 +20,7 @@ def prefix() -> typing.Iterator[str]:
 def test_help(capfd: pytest.CaptureFixture[str]) -> None:
     subprocess.check_call([sys.executable, "-m", "clone_repo.main", "--help"])
     captured = capfd.readouterr()
-    assert "Usage: python -m clone_repo.main [OPTIONS] URL" in captured.out
+    assert "Clone the given repo URL to a common prefix" in captured.out
 
 
 def test_json_dry_run(capfd: pytest.CaptureFixture[str], prefix: str) -> None:
