@@ -10,7 +10,7 @@ repository = "https://github.com/micktwomey/clone-repo"
 include = ["CHANGELOG.md", "justfile"]
 
 [tool.poetry.dependencies]
-python = ">=3.9,<4.0"
+python = ">=3.11,<4.0"
 structlog = "^25.4"
 typer = "^0.20"
 rich = "^14.2"
@@ -38,6 +38,9 @@ strict = true
 
 [tool.poetry.scripts]
 clone-repo = 'clone_repo.main:app'
+
+[too.ruff]
+target-version = "py311"
 
 [tool.ruff.lint]
 extend-select = ["I"]

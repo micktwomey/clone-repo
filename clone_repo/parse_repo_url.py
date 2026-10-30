@@ -7,7 +7,6 @@ Tries to handle all the exotic repos, suitable for cloning.
 import dataclasses
 import pathlib
 import re
-import typing
 
 
 @dataclasses.dataclass
@@ -19,7 +18,7 @@ class RepoURL:
     project: str
 
 
-def parse_url(url: str) -> typing.Optional[RepoURL]:
+def parse_url(url: str) -> RepoURL | None:
     """Parses the given repo url"""
     if url.startswith("file://") or str(pathlib.Path(url).expanduser()).startswith("/"):
         return RepoURL(url, "git", "localhost", "file", pathlib.Path(url).name)
@@ -45,15 +44,14 @@ def parse_url(url: str) -> typing.Optional[RepoURL]:
         tool = "hg"
     port = matched.get("port", None)
     if port is not None:
-        host = "{}:{}".format(host, port)
+        host = f"{host}:{port}"
     if matched["tool"] == "keybase":
         host = "keybase"
     group = matched["group"]
     if group is None:
         group = ""
     project = re.split(r"\.git$", matched["project"])[0]
-    if project.endswith("/"):
-        project = project[:-1]
+    project = project.removesuffix("/")
     if (
         host == "github.com"
         and tool == "git"
