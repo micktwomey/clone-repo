@@ -144,6 +144,16 @@ EXAMPLES = (
             "sync-camera-disk",
         ),
     ),
+    (
+        "ssh://git@forgejo.example.com:2222/mick/my-project.git",
+        RepoURL(
+            "ssh://git@forgejo.example.com:2222/mick/my-project.git",
+            "git",
+            "forgejo.example.com:2222",
+            "mick",
+            "my-project",
+        ),
+    ),
 )
 
 

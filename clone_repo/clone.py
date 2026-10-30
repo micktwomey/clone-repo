@@ -9,7 +9,10 @@ from .parse_repo_url import RepoURL
 def get_destination_path_for_repo(
     repo_url: RepoURL, prefix_path: pathlib.Path
 ) -> pathlib.Path:
-    return prefix_path / repo_url.host / repo_url.group / repo_url.project
+    host = repo_url.host.replace(
+        ":", "_"
+    )  # The port separator : can cause problems with file system paths.
+    return prefix_path / host / repo_url.group / repo_url.project
 
 
 def clone(
