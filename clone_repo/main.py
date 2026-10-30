@@ -1,8 +1,5 @@
-#!/usr/bin/env python3
-
 import logging
 import pathlib
-import typing
 
 import structlog
 import structlog.contextvars
@@ -48,7 +45,7 @@ def main(
     """Clone the given repo URL to a common prefix"""
     prefix_path = pathlib.Path(prefix).expanduser().resolve()
 
-    processors: typing.List[structlog.types.Processor] = (
+    processors: list[structlog.types.Processor] = (
         [
             structlog.contextvars.merge_contextvars,
             structlog.processors.add_log_level,
@@ -101,7 +98,7 @@ def main(
             fetch=fetch,
             prefix_path=prefix_path,
         )
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001
         log.fatal(f"Error: {e}", exc_info=debug or json)
         raise typer.Exit(code=1)
 
