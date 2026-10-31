@@ -30,7 +30,7 @@ def clone(
             subprocess.run(cmd, check=True, cwd=str(destination_path))
         return
 
-    path = str(prefix_path / repo_url.host / repo_url.group / repo_url.project)
+    path = str(destination_path)
     if repo_url.tool == "hg":
         cmd = ["hg", "clone", repo_url.url, path]
     else:
